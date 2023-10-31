@@ -92,64 +92,39 @@ footer{
 }
 
 .wrapper {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-      "header"
-      "nav"
-      "content"
-      "footer";
-  }
+    display: flex;
+    flex-direction: column;
+}
 
-
-  @media (max-width: 400px) {
+#img2 {
+    width: 400px;
+    display: block;
+}
+/*
+Right here is where I establish the media query to switch the pages.
+*/
+@media (max-width: 900px) {
     .wrapper {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "content";
+        flex-direction: column;
     }
-    footer {
+    .navbar a {
+        display: block;
+    }
+    .section2 img {
         display: none;
     }
-    
-    .navbar{
+}
+@media (min-width: 901px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .navbar a {
+        display: block;
+    }
+    #img2 {
         display: none;
     }
-    .header{
-        display: none;
-    }
-    
-  }
+}
 
-  /* @media (min-width: 500px) {
-    .wrapper {
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas:
-        "header header"
-        "navbar wrapper"
-        "section1 section1"
-        "section2 section2"
-        "footer footer";
-    }
-    .navbar ul {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
 
-  @media (min-width: 700px) {
-    .wrapper {
-      grid-template-columns: 1fr 4fr 1fr;
-      grid-template-areas:
-        "header header header"
-        "navbar navbar  navbar"
-        "content  content content"
-        "section1 section1 section1"
-        "section2 section2 section2"
-        "footer footer footer";
-    }
-    
-    .navbar ul {
-      flex-direction: column;
-    }
-  } */
+
